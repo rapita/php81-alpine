@@ -2,7 +2,7 @@
 FROM spiralscout/roadrunner:2.10.7 as roadrunner
 # See: <https://github.com/mlocati/docker-php-extension-installer>
 FROM mlocati/php-extension-installer:latest as php-extension-installer
-FROM php:8.1.8-alpine AS base
+FROM php:8.1.8-alpine
 
 COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr

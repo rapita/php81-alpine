@@ -1,4 +1,4 @@
-IMAGE_TAG   ?= v0.0.1
+IMAGE_TAG   ?= v0.0.3
 IMAGE_NAME  ?= php81-alpine
 VENDOR_NAME  = rapita
 
@@ -15,7 +15,7 @@ bash:
 
 .PHONY: build
 build:
-	docker buildx build -t $(VENDOR_NAME)/$(IMAGE_NAME):$(IMAGE_TAG) --rm .
+	docker build -t $(VENDOR_NAME)/$(IMAGE_NAME):$(IMAGE_TAG) --rm .
 
 .PHONY: push
 push:

@@ -8,11 +8,11 @@ COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/b
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 
 # install php extensions and components
+# todo: add grpc
 RUN install-php-extensions \
         @fix_letsencrypt \
         amqp \
         bcmath \
-        grpc \
         igbinary \
         imagick \
         mysqli \

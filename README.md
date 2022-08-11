@@ -1,4 +1,4 @@
-# Docker PHP 8.1 Alpine
+# Docker PHP 8.1 Alpine (3.16)
 
 This docker image with PHP 8.1 based on Alpine Linux. This image contains extensions needed for own projects (amqp, ~~grpc~~, mysql, pgsql, redis, rdkafka).
 

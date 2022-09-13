@@ -2,17 +2,18 @@
 FROM spiralscout/roadrunner:2.10.7 as roadrunner
 # See: <https://github.com/mlocati/docker-php-extension-installer>
 FROM mlocati/php-extension-installer:latest as php-extension-installer
-FROM php:8.1.8-alpine
+FROM php:8.1.10-alpine
 
 COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 
 # install php extensions and components
-# todo: add grpc
+# note: grpc compilation is wery slow. see <https://github.com/mlocati/docker-php-extension-installer/issues/316>
 RUN install-php-extensions \
         @fix_letsencrypt \
         amqp \
         bcmath \
+        grpc-^1.48 \
         igbinary \
         imagick \
         mysqli \

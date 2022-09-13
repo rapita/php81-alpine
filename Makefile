@@ -1,4 +1,4 @@
-IMAGE_TAG   ?= v0.0.5
+IMAGE_TAG   ?= v0.0.6
 IMAGE_NAME  ?= php81-alpine
 VENDOR_NAME  = rapita
 

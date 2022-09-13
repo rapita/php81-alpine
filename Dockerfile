@@ -8,7 +8,7 @@ COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/b
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 
 # install php extensions and components
-# note: grpc compilation is wery slow. see <https://github.com/mlocati/docker-php-extension-installer/issues/316>
+# note: grpc compilation is very slow. see <https://github.com/mlocati/docker-php-extension-installer/issues/316>
 RUN install-php-extensions \
         @fix_letsencrypt \
         amqp \
